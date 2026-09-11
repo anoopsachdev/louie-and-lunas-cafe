@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CatMark } from "@/components/cat-mark";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
@@ -11,13 +11,33 @@ import { cn } from "@/lib/utils";
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const onHero = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const onHome = pathname === "/";
+  const overHero = onHome && !scrolled;
+
+  useEffect(() => {
+    if (!onHome) {
+      setScrolled(false);
+      return;
+    }
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.72);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onHome]);
 
   return (
     <header
       className={cn(
-        "z-40 w-full",
-        onHero ? "absolute inset-x-0 top-0" : "sticky top-0 border-b border-espresso/10 bg-cream/90 backdrop-blur-md"
+        "z-40 w-full transition-colors duration-300",
+        onHome
+          ? cn(
+              "fixed inset-x-0 top-0",
+              overHero
+                ? "border-b border-transparent bg-transparent"
+                : "border-b border-espresso/10 bg-cream/90 backdrop-blur-md"
+            )
+          : "sticky top-0 border-b border-espresso/10 bg-cream/90 backdrop-blur-md"
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 md:px-8">
@@ -25,14 +45,14 @@ export function SiteHeader() {
           href="/"
           className={cn(
             "group flex items-center gap-2.5",
-            onHero ? "text-cream" : "text-espresso"
+            overHero ? "text-cream" : "text-espresso"
           )}
           onClick={() => setOpen(false)}
         >
           <CatMark
             className={cn(
               "h-5 w-12 opacity-90 transition group-hover:opacity-100",
-              onHero ? "text-brass-soft" : "text-brass"
+              overHero ? "text-brass-soft" : "text-brass"
             )}
           />
           <span className="font-display text-xl tracking-tight md:text-2xl">
@@ -49,7 +69,7 @@ export function SiteHeader() {
                 href={item.href}
                 className={cn(
                   "rounded-md px-3 py-2 text-sm tracking-wide transition",
-                  onHero
+                  overHero
                     ? active
                       ? "text-cream"
                       : "text-cream/70 hover:text-cream"
@@ -68,7 +88,7 @@ export function SiteHeader() {
             size="lg"
             className={cn(
               "ml-3 rounded-md px-4",
-              onHero
+              overHero
                 ? "border border-brass/40 bg-brass/90 text-espresso hover:bg-brass"
                 : "bg-espresso text-cream hover:bg-espresso-soft"
             )}
@@ -81,7 +101,7 @@ export function SiteHeader() {
           type="button"
           className={cn(
             "inline-flex h-10 w-10 items-center justify-center rounded-md border md:hidden",
-            onHero
+            overHero
               ? "border-cream/25 text-cream"
               : "border-espresso/20 text-espresso"
           )}
@@ -102,7 +122,7 @@ export function SiteHeader() {
         <div
           className={cn(
             "border-t px-5 py-4 backdrop-blur-md md:hidden",
-            onHero
+            overHero
               ? "border-cream/15 bg-espresso/95"
               : "border-espresso/10 bg-cream/95"
           )}
@@ -114,7 +134,7 @@ export function SiteHeader() {
                 href={item.href}
                 className={cn(
                   "rounded-md px-2 py-3",
-                  onHero ? "text-cream/90" : "text-espresso"
+                  overHero ? "text-cream/90" : "text-espresso"
                 )}
                 onClick={() => setOpen(false)}
               >
