@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   title: "Menu",
   description:
     "Classic coffee, Louie’s darker cups, Luna’s lighter blends, fruit × coffee, and seasonal rotations at Louie & Luna’s in New Delhi.",
+  openGraph: {
+    title: "Menu · Louie & Luna’s",
+    description:
+      "Classic, Louie’s, Luna’s, fruit × coffee, and seasonal cups — the reason guests keep coming back.",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Menu · Louie & Luna’s",
+    description:
+      "Classic, Louie’s, Luna’s, fruit × coffee, and seasonal cups — the reason guests keep coming back.",
+    images: ["/og.png"],
+  },
 };
 
 type MenuPageProps = {

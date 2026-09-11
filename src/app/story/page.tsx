@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   title: "Our Story",
   description:
     "How an Indian couple in their forties became Louie and Luna — two Persian cats and the soul of a New Delhi café.",
+  openGraph: {
+    title: "Our Story · Louie & Luna’s",
+    description:
+      "They were a couple. Then they were cats. The café in Lodhi Estate kept going.",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Story · Louie & Luna’s",
+    description:
+      "They were a couple. Then they were cats. The café in Lodhi Estate kept going.",
+    images: ["/og.png"],
+  },
 };
 
 export default function StoryPage() {

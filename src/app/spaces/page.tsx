@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   title: "Spaces",
   description:
     "Dining and co-working inside Louie & Luna’s — a Belle Époque café bungalow in New Delhi.",
+  openGraph: {
+    title: "Spaces · Louie & Luna’s",
+    description:
+      "One historic envelope — dining tables and quiet co-working under Belle Époque light.",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spaces · Louie & Luna’s",
+    description:
+      "One historic envelope — dining tables and quiet co-working under Belle Époque light.",
+    images: ["/og.png"],
+  },
 };
 
 export default function SpacesPage() {
