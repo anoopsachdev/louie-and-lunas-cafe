@@ -16,6 +16,10 @@ export function SiteHeader() {
   const overHero = onHome && !scrolled;
 
   useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     if (!onHome) {
       setScrolled(false);
       return;
