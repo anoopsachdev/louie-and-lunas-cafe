@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,8 +13,7 @@ export default function VisitPage() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
+    const data = new FormData(e.currentTarget);
     const name = String(data.get("name") || "");
     const email = String(data.get("email") || "");
     const party = String(data.get("party") || "");
@@ -36,10 +36,23 @@ export default function VisitPage() {
           A leafy Lodhi Estate bungalow in New Delhi
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-espresso/75 md:text-lg">
-          Parisian Belle Époque interiors inside an old Delhi setting — walkable from
-          Jor Bagh, quiet enough to feel discovered.
+          Parisian interiors inside an old Delhi setting — a short walk from Jor Bagh,
+          quiet enough to feel found.
         </p>
         <div className="ornament-rule mt-10" />
+      </section>
+
+      <section className="mx-auto mt-10 max-w-6xl px-5 md:px-8">
+        <div className="relative aspect-[21/9] overflow-hidden md:aspect-[2.4/1]">
+          <Image
+            src="/images/bungalow-exterior.png"
+            alt="Cream Lodhi Estate bungalow café exterior with warm evening light"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
       </section>
 
       <section className="mx-auto mt-14 grid max-w-6xl gap-12 px-5 md:grid-cols-2 md:px-8">
@@ -69,26 +82,42 @@ export default function VisitPage() {
           <div>
             <h2 className="font-display text-2xl text-espresso">Getting here</h2>
             <p className="mt-3 text-base leading-relaxed text-espresso/75">
-              Metro: {site.metro}. Autos and cabs know Lodhi Estate Lane —
-              look for the cream bungalow with brass lamps in the windows.
+              Metro: {site.metro}. Autos and cabs know Lodhi Estate Lane — look for the
+              cream bungalow with brass lamps in the windows.
             </p>
-            <p className="mt-3 text-sm text-espresso/60">
-              Or write us:{" "}
-              <a className="text-brass underline-offset-2 hover:underline" href={`mailto:${site.email}`}>
+            <p className="mt-4 text-sm text-espresso/70">
+              <a
+                className="text-brass underline-offset-2 hover:underline"
+                href={`mailto:${site.email}`}
+              >
                 {site.email}
-              </a>{" "}
-              · {site.phone}
+              </a>
+              <span className="mx-2 text-espresso/40">·</span>
+              <a className="hover:text-espresso" href={`tel:${site.phone.replace(/\s/g, "")}`}>
+                {site.phone}
+              </a>
             </p>
+          </div>
+          <div>
+            <Button
+              nativeButton={false}
+              render={
+                <a href={`mailto:${site.email}?subject=${encodeURIComponent("Table inquiry")}`} />
+              }
+              className="rounded-md bg-brass px-4 text-espresso hover:bg-brass-soft"
+            >
+              Inquire for a table
+            </Button>
           </div>
         </div>
 
-        <div className="bg-cream/70 p-6 md:p-8">
+        <div id="inquire" className="scroll-mt-28 bg-cream/70 p-6 md:p-8">
           <h2 className="font-display text-2xl text-espresso">
-            Soft table inquiry
+            Inquire for a table
           </h2>
           <p className="mt-2 text-sm text-espresso/65">
-            No online booking system — send a note and we’ll reply by email.
-            Opens your mail app with the details filled in.
+            No online booking — send a note and we’ll reply by email. This opens your
+            mail app with the details filled in.
           </p>
 
           <form className="mt-6 space-y-4" onSubmit={onSubmit}>

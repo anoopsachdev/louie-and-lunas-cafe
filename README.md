@@ -1,6 +1,6 @@
 # Louie & Luna’s
 
-Marketing site for **Louie & Luna’s** — a Romantic Old-World Parisian café with Belle Époque interiors in Lodhi Estate, New Delhi. Dining, co-working, a coffee-forward menu (Classic, Louie’s, Luna’s, Fruit × Coffee, Seasonal), and two Persian cat mascots with an improbable origin story.
+Marketing site for **Louie & Luna’s** — an Old-World Parisian café with Belle Époque interiors in Lodhi Estate, New Delhi. Dining, co-working, a coffee-forward menu (Classic, Louie’s, Luna’s, Seasonal), and two Persian cat mascots with an improbable origin story.
 
 ## Stack
 
@@ -18,15 +18,22 @@ npm run dev
 
 Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
+Production:
+
+```bash
+npm run build
+npm run start -- -p 4321 -H 0.0.0.0
+```
+
 ## Pages
 
 | Path | Purpose |
 |------|---------|
 | `/` | Brand-first landing |
-| `/menu` | Coffee categories + light dining |
+| `/menu` | Coffee categories + full food menu |
 | `/spaces` | Dining room & co-working |
 | `/story` | Louie & Luna lore |
-| `/visit` | New Delhi address, hours, inquiry |
+| `/visit` | Address, hours, table inquiry |
 
 ## Social / favicon
 

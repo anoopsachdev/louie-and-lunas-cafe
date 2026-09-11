@@ -31,11 +31,11 @@ export default function HomePage() {
             {site.name}
           </p>
           <h1 className="reveal-up reveal-delay-1 mt-5 max-w-xl font-display text-2xl leading-snug text-cream/95 sm:text-3xl md:text-4xl">
-            This place feels like it has existed for a hundred years — and somehow you found it.
+            Feels like it’s been here a hundred years — and you just found it.
           </h1>
           <p className="reveal-up reveal-delay-2 mt-4 max-w-lg text-base leading-relaxed text-cream/75 md:text-lg">
-            A Romantic Old-World Parisian café in New Delhi’s Lodhi Estate —
-            grand mouldings, warm light, and more coffees than an afternoon can hold.
+            An Old-World Parisian café in New Delhi’s Lodhi Estate — warm light,
+            long stays, and a coffee list that keeps growing.
           </p>
           <div className="reveal-up reveal-delay-3 mt-8 flex flex-wrap gap-3">
             <Button
@@ -44,16 +44,16 @@ export default function HomePage() {
               size="lg"
               className="rounded-md bg-brass px-5 text-espresso hover:bg-brass-soft"
             >
-              Explore the coffees
+              See the coffees
             </Button>
             <Button
               nativeButton={false}
-              render={<Link href="/visit" />}
+              render={<Link href="/visit#inquire" />}
               size="lg"
               variant="outline"
               className="rounded-md border-cream/35 bg-transparent px-5 text-cream hover:bg-cream/10 hover:text-cream"
             >
-              Visit us
+              Inquire for a table
             </Button>
           </div>
         </div>
@@ -62,16 +62,15 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <div className="max-w-2xl">
           <p className="text-xs font-medium tracking-[0.2em] text-brass uppercase">
-            The contrast
+            The feel
           </p>
           <h2 className="mt-3 font-display text-3xl text-espresso md:text-5xl">
-            Grand architecture. Soft cats. Casual café culture.
+            Grand bones. Soft cats. Casual days.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-espresso/75 md:text-lg">
-            Ornate curves and antique mirrors share the room with laptops, first dates,
-            three-hour sits, and someone ordering a passionfruit espresso. Louie and Luna —
-            black and white Persian celebrities of the house — keep the grandeur from
-            ever turning pretentious.
+            Ornate mouldings and antique mirrors, then someone on a laptop, a first date,
+            a three-hour sit, and a ridiculous Louie or Luna coffee. The cats keep the
+            place from getting too serious.
           </p>
         </div>
       </section>
@@ -83,11 +82,11 @@ export default function HomePage() {
               Spaces
             </p>
             <h2 className="mt-3 font-display text-3xl text-espresso md:text-4xl">
-              Dining & co-working under one chandelier.
+              Dining and co-working under one chandelier.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-espresso/75">
-              The same historic envelope holds two rituals: marble tables for lingering
-              meals, and quiet wood corners where the afternoon stretches.
+              Same historic room, two rhythms: marble tables for meals, quiet wood corners
+              for work that runs long.
             </p>
             <Button
               nativeButton={false}
@@ -124,29 +123,28 @@ export default function HomePage() {
         <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="text-xs font-medium tracking-[0.2em] text-brass uppercase">
-              Coffee identity
+              Coffee
             </p>
             <h2 className="mt-3 font-display text-3xl text-espresso md:text-5xl">
               Wait… they have this many coffees?
             </h2>
             <p className="mt-5 text-base leading-relaxed text-espresso/75 md:text-lg">
-              Classic. Louie’s darker blends. Luna’s floral cups. Fruit × coffee experiments.
-              Seasonal rotations that change with Delhi’s weather. Beauty brings you in —
-              the menu brings you back.
+              Classic. Louie’s darker cups. Luna’s lighter ones. Seasonal drinks that
+              change with Delhi’s weather. The room brings you in — the list brings you back.
             </p>
             <Button
               nativeButton={false}
               render={<Link href="/menu" />}
               className="mt-6 rounded-md bg-brass px-4 text-espresso hover:bg-brass-soft"
             >
-              Read the full menu
+              Read the menu
             </Button>
           </div>
           <div className="space-y-5">
             {[
-              { title: "Louie’s Coffees", line: "Darker, richer, bolder combinations." },
-              { title: "Luna’s Coffees", line: "Lighter, floral, creamy, fruity." },
-              { title: "Fruit × Coffee", line: "Passionfruit, peach, coconut, and more." },
+              { title: "Louie’s", line: "Darker, richer, bolder — spice, smoke, deep fruit." },
+              { title: "Luna’s", line: "Lighter, floral, creamy — bright fruit welcome." },
+              { title: "Seasonal", line: "Rotating cups that follow Delhi’s weather." },
             ].map((item) => (
               <div key={item.title} className="border-l-2 border-brass/50 pl-5">
                 <p className="font-display text-2xl text-espresso">{item.title}</p>
@@ -184,11 +182,11 @@ export default function HomePage() {
               The house cats
             </p>
             <h2 className="mt-3 font-display text-3xl md:text-4xl">
-              Louie & Luna, little celebrities of the café.
+              Louie and Luna, quietly famous here.
             </h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-cream/70">
-              You don’t need cats plastered everywhere. A quiet presence is enough —
-              black Persian Louie, white Persian Luna, and a story too strange to rush.
+              You won’t find cats on every poster. Just a black Persian and a white one —
+              and a story best told over coffee.
             </p>
             <Button
               nativeButton={false}

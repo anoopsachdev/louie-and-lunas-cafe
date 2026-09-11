@@ -15,8 +15,8 @@ export type MenuCategory = {
 export const coffeeCategories: MenuCategory[] = [
   {
     id: "classic",
-    title: "Classic Coffee",
-    subtitle: "The foundations — pulled clean, served without fuss.",
+    title: "Classic",
+    subtitle: "The everyday cups — pulled clean, no fuss.",
     items: [
       {
         name: "Espresso",
@@ -40,7 +40,7 @@ export const coffeeCategories: MenuCategory[] = [
       },
       {
         name: "Café Latte",
-        description: "Softer milk profile, longer sip, quiet morning fuel.",
+        description: "Softer milk, longer sip — quiet morning fuel.",
         price: "₹280",
       },
       {
@@ -55,15 +55,15 @@ export const coffeeCategories: MenuCategory[] = [
       },
       {
         name: "Cold Brew",
-        description: "Sixteen-hour steep, low acid, served over ice.",
+        description: "Sixteen-hour steep, low acid, over ice.",
         price: "₹300",
       },
     ],
   },
   {
     id: "louies",
-    title: "Louie’s Coffees",
-    subtitle: "Darker, richer, bolder — for the black cat’s crowd.",
+    title: "Louie’s",
+    subtitle: "Darker, richer, bolder — spice, smoke, deep fruit.",
     items: [
       {
         name: "Louie’s Shadow",
@@ -72,7 +72,7 @@ export const coffeeCategories: MenuCategory[] = [
       },
       {
         name: "Midnight Flat",
-        description: "Flat white with charcoal-roasted single origin.",
+        description: "Flat white with a charcoal-roasted single origin.",
         price: "₹360",
       },
       {
@@ -95,12 +95,27 @@ export const coffeeCategories: MenuCategory[] = [
         description: "Espresso, date molasses, warm milk, cracked pepper.",
         price: "₹370",
       },
+      {
+        name: "Passionfruit Espresso",
+        description: "Tart passionfruit cordial over a chilled double shot.",
+        price: "₹380",
+      },
+      {
+        name: "Blackberry Espresso Tonic",
+        description: "Blackberry shrub, tonic, espresso float.",
+        price: "₹390",
+      },
+      {
+        name: "Coconut Coffee",
+        description: "Espresso, coconut milk, toasted coconut flakes.",
+        price: "₹370",
+      },
     ],
   },
   {
     id: "lunas",
-    title: "Luna’s Coffees",
-    subtitle: "Lighter, floral, creamy, gently fruity.",
+    title: "Luna’s",
+    subtitle: "Lighter, floral, creamy — bright fruit welcome.",
     items: [
       {
         name: "Luna’s Pearl",
@@ -132,18 +147,6 @@ export const coffeeCategories: MenuCategory[] = [
         description: "White chocolate, espresso, cream, edible flower.",
         price: "₹380",
       },
-    ],
-  },
-  {
-    id: "fruit",
-    title: "Fruit × Coffee",
-    subtitle: "The reason people say: wait… they have THIS many coffees?",
-    items: [
-      {
-        name: "Passionfruit Espresso",
-        description: "Tart passionfruit cordial over a chilled double shot.",
-        price: "₹380",
-      },
       {
         name: "Orange Espresso",
         description: "Fresh orange oil, espresso, sparkling water.",
@@ -160,11 +163,6 @@ export const coffeeCategories: MenuCategory[] = [
         price: "₹380",
       },
       {
-        name: "Coconut Coffee",
-        description: "Espresso, coconut milk, toasted coconut flakes.",
-        price: "₹370",
-      },
-      {
         name: "Mango Cold Foam",
         description: "Cold brew crowned with Alphonso mango foam.",
         price: "₹390",
@@ -173,11 +171,6 @@ export const coffeeCategories: MenuCategory[] = [
         name: "Yuzu Americano",
         description: "Bright yuzu, sparkling americano, crushed ice.",
         price: "₹360",
-      },
-      {
-        name: "Blackberry Espresso Tonic",
-        description: "Blackberry shrub, tonic, espresso float.",
-        price: "₹390",
       },
     ],
   },
@@ -190,19 +183,19 @@ export const coffeeCategories: MenuCategory[] = [
         name: "Monsoon Cardamom Cold Brew",
         description: "Rainy-day cold brew with green cardamom and jaggery.",
         price: "₹370",
-        note: "Monsoon rotation",
+        note: "Monsoon",
       },
       {
         name: "Winter Saffron Latte",
         description: "Espresso, saffron milk, a whisper of pistachio.",
         price: "₹420",
-        note: "Winter rotation",
+        note: "Winter",
       },
       {
         name: "Foggy Morning Chai Affogato",
         description: "Masala chai gelato under a hot espresso pour.",
         price: "₹400",
-        note: "Delhi winter mornings",
+        note: "Delhi winter",
       },
       {
         name: "Spring Guava Espresso",
@@ -214,35 +207,116 @@ export const coffeeCategories: MenuCategory[] = [
   },
 ];
 
-export const diningItems: MenuItem[] = [
+export type FoodSection = {
+  id: string;
+  title: string;
+  subtitle: string;
+  items: MenuItem[];
+};
+
+export const foodSections: FoodSection[] = [
   {
-    name: "Herb Omelette & Toast",
-    description: "Soft eggs, garden herbs, sourdough, cultured butter.",
-    price: "₹420",
+    id: "plates",
+    title: "Breakfast & all day",
+    subtitle: "Plates that hold up from morning through a long afternoon.",
+    items: [
+      {
+        name: "Herb Omelette & Toast",
+        description: "Soft eggs, garden herbs, sourdough, cultured butter.",
+        price: "₹420",
+      },
+      {
+        name: "Masala Scramble",
+        description: "Eggs with onion, tomato, green chilli; buttered toast.",
+        price: "₹390",
+      },
+      {
+        name: "Mushroom Toast",
+        description: "Wild mushrooms, crème fraîche, thyme on rye.",
+        price: "₹480",
+      },
+      {
+        name: "Avocado & Soft Egg",
+        description: "Sourdough, chilli flakes, lemon, olive oil.",
+        price: "₹460",
+      },
+      {
+        name: "Croque Madame",
+        description: "Ham, Gruyère, béchamel, sunny egg.",
+        price: "₹560",
+      },
+      {
+        name: "Seasonal Quiche",
+        description: "Buttery pastry, changing filling, green salad.",
+        price: "₹490",
+      },
+      {
+        name: "Niçoise Salad",
+        description: "Tuna, soft egg, olives, beans, mustard vinaigrette.",
+        price: "₹540",
+      },
+      {
+        name: "Granola Bowl",
+        description: "House granola, yoghurt, honey, seasonal fruit.",
+        price: "₹380",
+      },
+    ],
   },
   {
-    name: "Mushroom Toast",
-    description: "Wild mushrooms, crème fraîche, thyme on rye.",
-    price: "₹480",
+    id: "shareables",
+    title: "To share",
+    subtitle: "Small plates for the table while you decide on another coffee.",
+    items: [
+      {
+        name: "Marinated Olives",
+        description: "Citrus peel, rosemary, warm olive oil.",
+        price: "₹280",
+      },
+      {
+        name: "Hummus & Flatbread",
+        description: "Sesame, lemon, paprika; soft warm bread.",
+        price: "₹360",
+      },
+      {
+        name: "Cheese Plate",
+        description: "Three cheeses, fruit preserve, crackers.",
+        price: "₹520",
+      },
+      {
+        name: "Spiced Nuts",
+        description: "Roasted with chilli, jaggery, and sea salt.",
+        price: "₹260",
+      },
+    ],
   },
   {
-    name: "Croque Madame",
-    description: "Ham, Gruyère, béchamel, sunny egg.",
-    price: "₹560",
-  },
-  {
-    name: "Niçoise Salad",
-    description: "Tuna, soft egg, olives, beans, mustard vinaigrette.",
-    price: "₹540",
-  },
-  {
-    name: "Seasonal Quiche",
-    description: "Buttery pastry, changing filling, green salad.",
-    price: "₹490",
-  },
-  {
-    name: "Dark Chocolate Tart",
-    description: "70% ganache, flaky shell, crème fraîche.",
-    price: "₹380",
+    id: "desserts",
+    title: "Desserts",
+    subtitle: "Something sweet with the last cup — or the next one.",
+    items: [
+      {
+        name: "Dark Chocolate Tart",
+        description: "70% ganache, flaky shell, crème fraîche.",
+        price: "₹380",
+      },
+      {
+        name: "Lemon Posset",
+        description: "Set cream, shortbread, candied peel.",
+        price: "₹340",
+      },
+      {
+        name: "Almond Olive-Oil Cake",
+        description: "Light, fragrant, served with cream.",
+        price: "₹360",
+      },
+      {
+        name: "Vanilla Affogato",
+        description: "Gelato, hot espresso. Simple and right.",
+        price: "₹320",
+      },
+    ],
   },
 ];
+
+/** @deprecated use foodSections */
+export const diningItems: MenuItem[] = foodSections.flatMap((s) => s.items);

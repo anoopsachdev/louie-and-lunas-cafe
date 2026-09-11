@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { coffeeCategories, diningItems } from "@/lib/menu-data";
+import { coffeeCategories, foodSections } from "@/lib/menu-data";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Classic coffee, Louie’s darker cups, Luna’s lighter blends, fruit × coffee, and seasonal rotations at Louie & Luna’s in New Delhi.",
+    "Classic coffee, Louie’s darker cups, Luna’s lighter blends, seasonal rotations, and a full café kitchen at Louie & Luna’s in New Delhi.",
   openGraph: {
     title: "Menu · Louie & Luna’s",
     description:
-      "Classic, Louie’s, Luna’s, fruit × coffee, and seasonal cups — the reason guests keep coming back.",
+      "Classic, Louie’s, Luna’s, and seasonal coffees — plus breakfast, shareables, and desserts.",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Menu · Louie & Luna’s",
     description:
-      "Classic, Louie’s, Luna’s, fruit × coffee, and seasonal cups — the reason guests keep coming back.",
+      "Classic, Louie’s, Luna’s, and seasonal coffees — plus breakfast, shareables, and desserts.",
     images: ["/og.png"],
   },
 };
@@ -43,14 +44,33 @@ export default async function MenuPage({ searchParams }: MenuPageProps) {
           Wait… they have this many coffees?
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-espresso/75 md:text-lg">
-          Classic foundations, Louie’s darker cups, Luna’s lighter ones, fruit experiments,
-          and seasonal rotations that change with Delhi’s weather. Food keeps you grounded —
-          coffee keeps you coming back.
+          Classic cups, Louie’s darker ones, Luna’s lighter ones, and seasonal
+          rotations that change with Delhi’s weather. Food is here so you can stay.
         </p>
         <div className="ornament-rule mt-10" />
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pt-10 md:px-8">
+      <section className="mx-auto grid max-w-6xl items-end gap-10 px-5 pt-10 md:grid-cols-[1.2fr_0.8fr] md:px-8">
+        <div>
+          <p className="text-xs font-medium tracking-[0.2em] text-brass uppercase">
+            Coffee
+          </p>
+          <h2 className="mt-3 font-display text-3xl text-espresso md:text-4xl">
+            Four lists. Plenty of reasons to come back.
+          </h2>
+        </div>
+        <div className="relative hidden aspect-[4/3] overflow-hidden md:block">
+          <Image
+            src="/images/menu-still.png"
+            alt="Espresso and pastry on a marble café table"
+            fill
+            className="object-cover"
+            sizes="30vw"
+          />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pt-8 md:px-8">
         <div
           role="tablist"
           aria-label="Coffee categories"
@@ -79,9 +99,9 @@ export default async function MenuPage({ searchParams }: MenuPageProps) {
         </div>
 
         <div role="tabpanel" className="reveal-up mt-10">
-          <h2 className="font-display text-3xl text-espresso md:text-4xl">
+          <h3 className="font-display text-3xl text-espresso md:text-4xl">
             {category.title}
-          </h2>
+          </h3>
           <p className="mt-2 max-w-xl text-espresso/65">{category.subtitle}</p>
 
           <ul className="mt-8 divide-y divide-espresso/10">
@@ -92,9 +112,9 @@ export default async function MenuPage({ searchParams }: MenuPageProps) {
               >
                 <div>
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="font-display text-2xl text-espresso">
+                    <h4 className="font-display text-2xl text-espresso">
                       {item.name}
-                    </h3>
+                    </h4>
                     {item.note ? (
                       <span className="text-xs tracking-wide text-brass uppercase">
                         {item.note}
@@ -112,34 +132,49 @@ export default async function MenuPage({ searchParams }: MenuPageProps) {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
+      <section id="food" className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
         <div className="border-t border-espresso/10 pt-16">
           <p className="text-xs font-medium tracking-[0.2em] text-brass uppercase">
-            From the kitchen
+            Food
           </p>
-          <h2 className="mt-3 font-display text-3xl text-espresso md:text-4xl">
-            Simple plates for long stays
+          <h2 className="mt-3 max-w-2xl font-display text-3xl text-espresso md:text-5xl">
+            Real plates for long stays
           </h2>
-          <p className="mt-3 max-w-xl text-espresso/65">
-            Not eight $900-looking dishes — just warm, careful food that belongs with
-            coffee and conversation.
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-espresso/75 md:text-lg">
+            Breakfast through dessert — café prices, nothing precious. Coffee is still
+            why you come; food is why you don’t have to leave.
           </p>
-          <ul className="mt-8 divide-y divide-espresso/10">
-            {diningItems.map((item) => (
-              <li
-                key={item.name}
-                className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline"
-              >
-                <div>
-                  <h3 className="font-display text-2xl text-espresso">{item.name}</h3>
-                  <p className="mt-1 max-w-2xl text-sm text-espresso/65">
-                    {item.description}
-                  </p>
-                </div>
-                <p className="text-sm font-medium text-espresso/80">{item.price}</p>
-              </li>
+
+          <div className="mt-14 space-y-16">
+            {foodSections.map((section) => (
+              <div key={section.id}>
+                <h3 className="font-display text-3xl text-espresso md:text-4xl">
+                  {section.title}
+                </h3>
+                <p className="mt-2 max-w-xl text-espresso/65">{section.subtitle}</p>
+                <ul className="mt-8 divide-y divide-espresso/10">
+                  {section.items.map((item) => (
+                    <li
+                      key={item.name}
+                      className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline"
+                    >
+                      <div>
+                        <h4 className="font-display text-2xl text-espresso">
+                          {item.name}
+                        </h4>
+                        <p className="mt-1 max-w-2xl text-sm leading-relaxed text-espresso/65">
+                          {item.description}
+                        </p>
+                      </div>
+                      <p className="text-sm font-medium text-espresso/80">
+                        {item.price}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
     </div>

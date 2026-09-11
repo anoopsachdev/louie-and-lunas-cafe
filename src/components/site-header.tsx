@@ -88,7 +88,7 @@ export function SiteHeader() {
           })}
           <Button
             nativeButton={false}
-            render={<Link href="/visit" />}
+            render={<Link href="/visit#inquire" />}
             size="lg"
             className={cn(
               "ml-3 rounded-md px-4",
@@ -97,7 +97,7 @@ export function SiteHeader() {
                 : "bg-espresso text-cream hover:bg-espresso-soft"
             )}
           >
-            Plan a visit
+            Inquire for a table
           </Button>
         </nav>
 
@@ -145,6 +145,16 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/visit#inquire"
+              className={cn(
+                "rounded-md px-2 py-3 font-medium",
+                overHero ? "text-brass-soft" : "text-brass"
+              )}
+              onClick={() => setOpen(false)}
+            >
+              Inquire for a table
+            </Link>
           </nav>
         </div>
       ) : null}

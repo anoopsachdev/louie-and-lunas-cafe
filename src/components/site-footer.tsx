@@ -12,8 +12,16 @@ export function SiteFooter() {
             <p className="font-display text-2xl">{site.name}</p>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
-            Grand mouldings, soft cats, and more coffees than you meant to try —
-            tucked into a leafy Lodhi Estate bungalow in New Delhi.
+            Grand mouldings, soft cats, and more coffees than you meant to try — in a
+            leafy Lodhi Estate bungalow.
+          </p>
+          <p className="mt-5">
+            <Link
+              href="/visit#inquire"
+              className="text-sm font-medium text-brass-soft underline-offset-4 hover:underline"
+            >
+              Inquire for a table
+            </Link>
           </p>
         </div>
 
@@ -27,6 +35,15 @@ export function SiteFooter() {
             {site.address.line2}
           </p>
           <p className="mt-3 text-sm text-cream/60">{site.metro}</p>
+          <p className="mt-3 text-sm text-cream/60">
+            <a href={`mailto:${site.email}`} className="hover:text-cream">
+              {site.email}
+            </a>
+            <br />
+            <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-cream">
+              {site.phone}
+            </a>
+          </p>
         </div>
 
         <div>
@@ -42,17 +59,17 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <a href={`mailto:${site.email}`} className="hover:text-cream">
-                {site.email}
-              </a>
+              <Link href="/visit#inquire" className="hover:text-cream">
+                Inquire for a table
+              </Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-cream/10">
         <p className="mx-auto max-w-6xl px-5 py-5 text-xs text-cream/45 md:px-8">
-          © {new Date().getFullYear()} {site.name}. A fictional café concept for
-          this project — come for the coffee list, stay for Louie and Luna.
+          © {new Date().getFullYear()} {site.name}. A fictional café concept for this
+          project — come for the coffee list, stay for Louie and Luna.
         </p>
       </div>
     </footer>

@@ -3,7 +3,7 @@ export const site = {
   shortName: "Louie & Luna’s",
   tagline: "A Parisian café hiding in a New Delhi bungalow.",
   description:
-    "Romantic Old-World Parisian café in Lodhi Estate, New Delhi — Belle Époque interiors, endless coffees, dining, and quiet co-working. Home to Louie and Luna, two Persian cats with an improbable past.",
+    "Old-World Parisian café in Lodhi Estate, New Delhi — Belle Époque interiors, a long coffee list, dining, and quiet co-working. Home to Louie and Luna, two Persian cats with an improbable past.",
   email: "hello@louieandlunas.in",
   phone: "+91 11 4567 8901",
   address: {

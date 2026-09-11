@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Spaces · Louie & Luna’s",
     description:
-      "One historic envelope — dining tables and quiet co-working under Belle Époque light.",
+      "One historic room — tables for meals, quiet corners for work.",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Spaces · Louie & Luna’s",
     description:
-      "One historic envelope — dining tables and quiet co-working under Belle Époque light.",
+      "One historic room — tables for meals, quiet corners for work.",
     images: ["/og.png"],
   },
 };
@@ -30,12 +30,12 @@ export default function SpacesPage() {
           Spaces
         </p>
         <h1 className="mt-3 max-w-3xl font-display text-4xl text-espresso md:text-6xl">
-          One historic envelope. Two ways to linger.
+          One old room. Two ways to stay.
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-espresso/75 md:text-lg">
-          Walk in and you notice ornate curves, parchment walls, marble, dark wood,
-          beautiful lamps. Then you notice the people: someone on a laptop, someone
-          reading, someone on a first date, someone three hours into the afternoon.
+          You notice the mouldings, parchment walls, marble, dark wood, and lamps.
+          Then you notice the people: a laptop, a book, a first date, someone three
+          hours in.
         </p>
         <div className="ornament-rule mt-10" />
       </section>
@@ -55,14 +55,13 @@ export default function SpacesPage() {
             The dining room
           </h2>
           <p className="mt-4 text-base leading-relaxed text-espresso/75">
-            Intimate tables under warm light. Evening chandeliers. Plates that don’t
-            perform — they accompany the coffee conversation. Come for breakfast
-            toast, stay through a late dessert and another fruit espresso.
+            Small tables under warm light. Evening chandeliers. Food that sits well
+            next to coffee — breakfast toast, a late dessert, another Louie or Luna cup.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-espresso/70">
-            <li>Tables for two and four; a longer communal for evenings</li>
-            <li>Warm sunlight by day, intimate lamps after dusk</li>
-            <li>Ideal for slow meals, dates, and catch-ups</li>
+            <li>Tables for two and four; a longer communal in the evening</li>
+            <li>Daylight by day, lamps after dusk</li>
+            <li>Good for slow meals, dates, and catch-ups</li>
           </ul>
         </div>
       </section>
@@ -73,12 +72,12 @@ export default function SpacesPage() {
             The co-working corner
           </h2>
           <p className="mt-4 text-base leading-relaxed text-espresso/75">
-            Not a glass office with hot desks — a quiet historic room with brass lamps,
-            long wood tables, and the soft murmur of the café. Stay as long as the
-            coffee list holds your curiosity.
+            Not a glass office — a quiet historic room with brass lamps, long wood
+            tables, and the soft sound of the café. Stay as long as the coffee list
+            holds your interest.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-espresso/70">
-            <li>Power points at the long tables</li>
+            <li>Power at the long tables</li>
             <li>Wi‑Fi steady enough for real work</li>
             <li>No desk booking — arrive, settle, order another cup</li>
           </ul>
@@ -97,11 +96,11 @@ export default function SpacesPage() {
       <section className="mx-auto mt-20 max-w-6xl px-5 md:px-8">
         <div className="bg-espresso px-6 py-12 text-cream md:px-12">
           <h2 className="font-display text-3xl md:text-4xl">
-            Somewhere around the room: Louie and Luna
+            Somewhere in the room: Louie and Luna
           </h2>
           <p className="mt-4 max-w-2xl text-cream/70">
-            Their presence is subtle — a silhouette on a chair, a nap on the sill —
-            enough to make the grand room feel personal.
+            A silhouette on a chair, a nap on the sill — enough to make the grand room
+            feel personal.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
@@ -109,15 +108,15 @@ export default function SpacesPage() {
               render={<Link href="/menu" />}
               className="rounded-md bg-brass px-4 text-espresso hover:bg-brass-soft"
             >
-              See the coffee list
+              See the menu
             </Button>
             <Button
               nativeButton={false}
-              render={<Link href="/visit" />}
+              render={<Link href="/visit#inquire" />}
               variant="outline"
               className="rounded-md border-cream/30 bg-transparent text-cream hover:bg-cream/10 hover:text-cream"
             >
-              Plan your visit
+              Inquire for a table
             </Button>
           </div>
         </div>
