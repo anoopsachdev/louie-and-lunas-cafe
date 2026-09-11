@@ -28,6 +28,12 @@ Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 | `/story` | Louie & Luna lore |
 | `/visit` | New Delhi address, hours, inquiry |
 
+## Social / favicon
+
+- Favicon: `public/icon.svg` (Louie + Luna mark) and `public/apple-icon.png`
+- Open Graph image: `public/og.png` (1200×630)
+- Set `NEXT_PUBLIC_SITE_URL` to your deployed origin so OG/Twitter absolute URLs resolve correctly (defaults to `https://louieandlunas.in`).
+
 ## Note
 
 Address, phone, and email are fictional concept details for this project.
