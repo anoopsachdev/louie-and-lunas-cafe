@@ -1,36 +1,28 @@
 # Louie & Luna's
 
-Marketing site for a fictional Old-World Parisian café in New Delhi, built with Next.js and Tailwind CSS.
+The website for a café that doesn't exist.
 
-## What this is
+I'm a coffee enthusiast, and I've spent most of the last four months studying in cafés. Somewhere in there I started imagining my own — an Old-World Parisian one — and rather than let it stay a daydream, I figured the easiest way to actually see it was to build its website.
 
-A personal project by someone who spends too much time thinking about coffee menus. Louie & Luna's is not a real café — it is a made-up one in Lodhi Estate, New Delhi, with Belle Époque interiors, a dining room, a co-working corner, and two Persian cats named Louie and Luna.
+So: Louie & Luna's sits in a leafy Lodhi Estate bungalow in New Delhi. Belle Époque interiors, a dining space, and a co-working corner for people like me who study in cafés. Louie and Luna are the two Persian cats who run the place in spirit — Louie black, Luna white — and there's a silly bit of lore that they used to be an Indian couple in their forties and somehow ended up as cats.
 
-The site exists as a design and front-end exercise: a brand-led landing page, a coffee list deep enough to be the actual hook, a real food menu, and a table-inquiry path that goes to email instead of a booking system.
+The menu is the real point. Way too many coffees, split into four lists: Classic, Louie's (darker, bolder), Luna's (lighter, floral), and Seasonal.
 
-Live: [louie-and-lunas-cafe.vercel.app](https://louie-and-lunas-cafe.vercel.app)
+It's a fictional café and a fun side project. I also used it as an excuse to get comfortable building things with Cursor.
 
-## Screenshots
+**Live:** [louie-and-lunas-cafe.vercel.app](https://louie-and-lunas-cafe.vercel.app)
 
-Home
-
-![Home hero](docs/home.png)
-
-Menu — coffee categories and the food section
-
-![Menu page](docs/menu.png)
-
-Spaces
-
-![Spaces page](docs/spaces.png)
+<p>
+  <img src="docs/home.png" alt="Home page hero" width="460">
+  <img src="docs/spaces.png" alt="Spaces page" width="460">
+</p>
+<p>
+  <img src="docs/menu.png" alt="Menu page" width="460">
+</p>
 
 ## Stack
 
-- Next.js 16 (App Router, Turbopack)
-- React 19 + TypeScript
-- Tailwind CSS v4
-- shadcn/ui primitives
-- Cormorant Garamond + Figtree via `next/font`
+Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui.
 
 ## Run locally
 
@@ -39,49 +31,18 @@ npm install
 npm run dev
 ```
 
-The dev server listens on [http://127.0.0.1:4321](http://127.0.0.1:4321) (port set in `package.json`).
+Then open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
-Production build:
+## What's in here
 
-```bash
-npm run build
-npm run start -- -p 4321
-```
+| Route | |
+|---|---|
+| `/` | The hero shot and a quick tour of the room |
+| `/menu` | The four coffee lists, plus food |
+| `/spaces` | Dining room and the co-working corner |
+| `/story` | How Louie and Luna ended up as cats |
+| `/visit` | Address, hours, and a table inquiry that just opens an email |
 
-## Pages
+## One note
 
-| Path | What's there |
-|------|--------------|
-| `/` | Hero, the feel of the room, spaces tease, coffee identity, the two cats |
-| `/menu` | Coffee in four lists (Classic, Louie's, Luna's, Seasonal) plus the full food menu |
-| `/spaces` | Dining room and co-working corner, with house rules |
-| `/story` | How Louie and Luna came to run the place |
-| `/visit` | Address, hours, Metro directions, and a table inquiry form |
-
-## Design notes
-
-**Palette.** Warm parchment and cream against espresso brown, with brass as the only accent. Defined as CSS custom properties in `src/app/globals.css` and exposed to Tailwind through `@theme inline`. No pure black, no pure white — everything is slightly aged.
-
-**The cats are subtle.** Louie and Luna are the reason the place has a name, not the wallpaper. They appear as a small two-silhouette mark in the header and footer, once on the home page, and once properly on `/story`. The rest of the site is about the room and the coffee.
-
-**Coffee is the identity.** The menu splits into four lists instead of one long one, and two of them are named after the cats: Louie's are the darker, richer, spice-and-smoke cups, Luna's are lighter, floral, and creamy. Categories switch via `?cat=` on a server component, so the tabs work without client-side JavaScript.
-
-**Motion is restrained.** A slow lamp flicker in the hero, a staggered reveal on first paint, and nothing else. All of it is disabled under `prefers-reduced-motion`.
-
-## Deploy
-
-Deployed on Vercel from the `main` branch of this repo. Pushing to `main` triggers a production deploy; pull requests get preview deploys.
-
-One environment variable matters:
-
-| Variable | Purpose |
-|----------|---------|
-| `NEXT_PUBLIC_SITE_URL` | Deployment origin used as `metadataBase` so Open Graph and Twitter card image URLs resolve absolutely. Falls back to `https://louieandlunas.in` (the café's fictional domain) when unset. |
-
-Set it to the real origin in the Vercel project settings — for this deployment, `https://louie-and-lunas-cafe.vercel.app`.
-
-Social assets live in `public/`: `og.png` (1200×630), `icon.svg`, and `apple-icon.png`.
-
-## A note on the content
-
-Everything here is fictional: the café, the address, the phone number, the email, the prices, and the cats' backstory. The inquiry form opens a prefilled email draft — there is no backend, no database, no accounts, and no reservation system behind it.
+The address, phone number, hours, and prices are all made up, and the images are AI-generated.
