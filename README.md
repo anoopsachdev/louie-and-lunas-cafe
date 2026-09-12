@@ -14,11 +14,11 @@ It's a fictional café and a fun side project. I also used it as an excuse to ge
 
 <p>
   <img src="docs/home.png" alt="Home page hero" width="460">
-  <img src="docs/spaces.png" alt="Spaces page" width="460">
+  <!-- <img src="docs/spaces.png" alt="Spaces page" width="460"> -->
 </p>
-<p>
+<!-- <p>
   <img src="docs/menu.png" alt="Menu page" width="460">
-</p>
+</p> -->
 
 ## Stack
 
