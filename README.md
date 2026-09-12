@@ -1,14 +1,10 @@
 # Louie & Luna's
 
-The website for a café that doesn't exist.
+I've spent most of the last four months studying in cafés, and somewhere in there I started imagining my own. Building the site was the easiest way to actually see it.
 
-I'm a coffee enthusiast, and I've spent most of the last four months studying in cafés. Somewhere in there I started imagining my own — an Old-World Parisian one — and rather than let it stay a daydream, I figured the easiest way to actually see it was to build its website.
+Louie & Luna's sits in a leafy Lodhi Estate bungalow — Belle Époque interiors, a dining room, and a co-working corner. Louie and Luna are the two Persian cats who run the place in spirit, Louie black and Luna white, and the lore is that they used to be an Indian couple in their forties.
 
-So: Louie & Luna's sits in a leafy Lodhi Estate bungalow in New Delhi. Belle Époque interiors, a dining space, and a co-working corner for people like me who study in cafés. Louie and Luna are the two Persian cats who run the place in spirit — Louie black, Luna white — and there's a silly bit of lore that they used to be an Indian couple in their forties and somehow ended up as cats.
-
-The menu is the real point. Way too many coffees, split into four lists: Classic, Louie's (darker, bolder), Luna's (lighter, floral), and Seasonal.
-
-It's a fictional café and a fun side project. I also used it as an excuse to get comfortable building things with Cursor.
+The menu is the real point: way too many coffees, split into Classic, Louie's (darker, bolder), Luna's (lighter, floral), and Seasonal.
 
 **Live:** [louie-and-lunas-cafe.vercel.app](https://louie-and-lunas-cafe.vercel.app)
 
