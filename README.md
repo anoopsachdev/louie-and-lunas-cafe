@@ -2,7 +2,7 @@
 
 I've spent most of the last four months studying in cafés, and somewhere in there I started imagining my own. Building the site was the easiest way to actually see it.
 
-Louie & Luna's sits in a leafy Lodhi Estate bungalow — Belle Époque interiors, a dining room, and a co-working corner. Louie and Luna are the two Persian cats who run the place in spirit, Louie black and Luna white, and the lore is that they used to be an Indian couple in their forties.
+Louie & Luna's sits in a leafy Lodhi Estate bungalow — Belle Époque interiors, a dining room, and a co-working corner. The café is run, in spirit, by two Persian cats — Louie black, Luna white. A couple walked in once and never walked back out.
 
 The menu is the real point: way too many coffees, split into Classic, Louie's (darker, bolder), Luna's (lighter, floral), and Seasonal.
 
